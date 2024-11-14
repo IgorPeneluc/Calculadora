@@ -1,0 +1,95 @@
+##Relatório de Bug 1
+#Título do Bug: Cálculo incorreto na função adição
+#Localização do Bug: Linha 4 - def adicao(x, y):
+#Descrição Detalhada:
+#A função adição utiliza a expressão return x + np.add(x, y), o que pode resultar em um cálculo incorreto devido à adição de x duas vezes (uma vez diretamente e outra por meio de np.add(x, y)).
+#Contexto:
+#O problema pode ocorrer durante qualquer chamada à função adição com dois argumentos.
+#Passos para Reproduzir:
+#1. Chamar a função adicao(3, 4).
+#2. Verificar o resultado.
+#Consistência: O bug ocorre consistentemente.
+#Resultado Esperado: O retorno da soma deveria ser 7.
+#Resultado Obtido: O retorno é 10.
+#Severidade do Bug: Médio
+#Impacto do Bug: Afeta os resultados de operações de adição.
+
+##Relatório de Bug 2
+#Título do Bug: Ausência de verificação de divisão por zero
+#Localização do Bug: Linha 15 - def divisao(x, y):
+#Descrição Detalhada:
+#A função divisão não verifica se o divisor (y) é zero antes de executar a operação. Isso pode levar a uma exceção de divisão por zero, causando uma falha de execução.
+#Contexto:
+#O problema pode ocorrer quando o divisor (y) é igual a zero.
+#Passos para Reproduzir:
+#1. Chamar a função divisao(10, 0).
+#2. Verificar o resultado.
+#Consistência: O bug ocorre consistentemente.
+#Resultado Esperado: A função deve retornar uma mensagem de erro informando que a divisão por zero não é permitida.
+#Resultado Obtido: O código gera uma exceção de divisão por zero.
+#Severidade do Bug: Crítico
+#Impacto do Bug: Afeta a robustez do código, podendo interromper a execução do programa.
+
+##Relatório de Bug 3
+#Título do Bug: Lógica incorreta na função fatorial
+#Localização do Bug: Linha 30 - def fatorial(x):
+#Descrição Detalhada:
+#A função fatorial contém um loop com uma lógica incorreta que multiplica por i começando de 0, o que resulta em 0 para qualquer entrada. A função deveria começar a multiplicação de 1 até x.
+#Contexto:
+#O bug afeta a função de cálculo de fatorial para qualquer entrada maior que 0.
+#Passos para Reproduzir:
+#1. Chamar a função fatorial(5).
+#2. Verificar o resultado.
+#Consistência: O bug ocorre consistentemente.
+#Resultado Esperado: O retorno deveria ser 120 (5!).
+#Resultado Obtido: O retorno é 0.
+#Severidade do Bug: Alto
+#Impacto do Bug: Afeta a funcionalidade de cálculo do fatorial.
+
+##Relatório de Bug 4
+#Título do Bug: Função logaritmo_natural com uso incorreto de método
+#Localização do Bug: Linha 46 - def logaritmo_natural(x):
+#Descrição Detalhada:
+#A função logaritmo_natural utiliza np.ln(x), mas a função correta para logaritmo natural em numpy é np.log.
+#Contexto:
+#Afeta a função de logaritmo natural, que falha devido a um método inexistente.
+#Passos para Reproduzir:
+#1. Chamar a função logaritmo_natural(10).
+#2. Verificar o resultado.
+#Consistência: O bug ocorre consistentemente.
+#Resultado Esperado: O retorno deveria ser 2.302585.
+#Resultado Obtido: Erro de execução (método não encontrado).
+#Severidade do Bug: Crítico
+#Impacto do Bug: Impede o uso da função logaritmo_natural.
+
+##Relatório de Bug 5
+#Título do Bug: Condição inadequada em logaritmo_base10
+#Localização do Bug: Linha 56 - def logaritmo_base10(x):
+#Descrição Detalhada:
+#A verificação atual de entrada negativa na função logaritmo_base10 é if x < 0:, mas ela não cobre o caso em que x é igual a zero. O logaritmo de zero é indefinido, então a verificação correta deveria ser if x <= 0:.
+#Contexto:
+#Esse problema pode ocorrer quando a função é chamada com x igual a zero.
+#Passos para Reproduzir:
+#1. Chamar a função logaritmo_base10(0).
+#2. Verificar o resultado.
+#Consistência: O bug ocorre consistentemente.
+#Resultado Esperado: A função deve retornar uma mensagem de erro indicando que o logaritmo de zero não é permitido.
+#Resultado Obtido: O código pode retornar um resultado inesperado ou um erro.
+#Severidade do Bug: Alto
+#Impacto do Bug: Afeta a precisão e a segurança da função.
+
+##Relatório de Bug 6
+#Título do Bug: Ausência das funções seno, cosseno e tangente
+#Localização do Bug: Linha 64 - def seno(x), def cosseno(x) e def tangente(x):
+#Descrição Detalhada:
+#A ausência das duas funções impediria o código de rodar até as funções citadas.
+#Contexto:
+#Esse problema pode ocorrer quando a função é chamada seno, cosseno ou tangente.
+#Passos para Reproduzir:
+#1. Definir as duas funções.
+#2. Verificar o resultado.
+#Consistência: O bug ocorre consistentemente.
+#Resultado Esperado: A aplicação rode até o final com as funções seno, cosseno e tangente.
+#Resultado Obtido: A função deve retornar uma mensagem de erro indicando que o código está com problema.
+#Severidade do Bug: Crítico
+#Impacto do Bug: Afeta a precisão e a segurança do código.
